@@ -145,7 +145,7 @@ export default function HeroSection() {
       >
         <div className="space-y-6">
           <motion.p variants={fadeIn} className="text-[#9eff00]">
-            (hello, world!)
+            (HELLO, WORLD!)
           </motion.p>
           <motion.h1 variants={fadeIn} className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
             SKORD<span className="italic font-normal">labs</span>
