@@ -27,7 +27,7 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 py-4 md:py-6 transition-all duration-300 ${scrollY > 50 ? "bg-black/50 dark:bg-black/50 backdrop-blur-sm" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 py-4 md:py-6 transition-all duration-300 ${scrollY > 50 ? "bg-black/50 dark:bg-black/50 backdrop-blur-sm" : "bg-transparent"
         }`}
     >
       <div className="container mx-auto flex justify-between items-center">

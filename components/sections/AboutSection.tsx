@@ -22,7 +22,7 @@ export default function AboutSection() {
       <motion.div style={{ y: parallaxY }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#9eff00]/5" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-        <div className="h-full w-full bg-[url('/sq_6.jpg')] bg-cover bg-center" />
+        <div className="h-full w-full bg-[url('/sq_7.jpg')] bg-cover bg-center" />
       </motion.div>
 
       <motion.div
