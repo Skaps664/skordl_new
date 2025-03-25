@@ -170,7 +170,7 @@ export default function HeroSection() {
         <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4">
           <div className="aspect-square bg-gray-900 rounded-md overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
             <Image
-              src="/placeholder.svg?height=400&width=400"
+              src="/sq_3.jpg"
               alt="Software development"
               width={400}
               height={400}
@@ -179,7 +179,7 @@ export default function HeroSection() {
           </div>
           <div className="aspect-square bg-gray-900 rounded-md overflow-hidden transform transition-transform duration-300 hover:scale-[1.02]">
             <Image
-              src="/placeholder.svg?height=400&width=400"
+              src="/sq_4.jpg"
               alt="UI/UX design"
               width={400}
               height={400}
@@ -188,7 +188,7 @@ export default function HeroSection() {
           </div>
           <div className="aspect-square bg-gray-900 rounded-md overflow-hidden col-span-2 transform transition-transform duration-300 hover:scale-[1.02]">
             <Image
-              src="/placeholder.svg?height=400&width=800"
+              src="/sq_5.jpg"
               alt="Machine learning research"
               width={800}
               height={400}

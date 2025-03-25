@@ -2,19 +2,35 @@
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { fadeIn, staggerContainer } from "@/lib/animations"
+import { useRef } from "react"
 
 export default function AboutSection() {
+  // Parallax effect refs
+  const parallaxRef = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: parallaxRef,
+    offset: ["start start", "end start"],
+  })
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -100])
+
   return (
-    <section id="about" className="container mx-auto px-4 py-16 md:py-24 border-t border-gray-800 dark:border-gray-800">
+    <section ref={parallaxRef} id="about" className="relative py-32 md:py-48 overflow-hidden">
+      {/* Parallax Background */}
+      <motion.div style={{ y: parallaxY }} className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[#9eff00]/5" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
+        <div className="h-full w-full bg-[url('/sq_6.jpg')] bg-cover bg-center" />
+      </motion.div>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        className="container mx-auto px-4 relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
       >
         <motion.div variants={fadeIn} className="space-y-8">
           <div>
@@ -22,12 +38,12 @@ export default function AboutSection() {
             <div className="h-1 w-16 bg-[#9eff00]"></div>
           </div>
 
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-white text-lg">
             Founded in 2024, skordl is a software research and development lab at the intersection of design and technology.
             We create innovative digital solutions that drive business growth and technological advancement.
           </p>
 
-          <p className="text-gray-600 dark:text-gray-400 text-lg">
+          <p className="text-gray-600 dark:text-white text-lg">
             Our team of expert engineers, designers, and researchers work collaboratively to deliver exceptional results
             that exceed client expectations.
           </p>
@@ -67,4 +83,3 @@ export default function AboutSection() {
     </section>
   )
 }
-

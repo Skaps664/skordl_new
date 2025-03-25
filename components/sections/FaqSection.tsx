@@ -8,7 +8,7 @@ import { fadeIn, staggerContainer } from "@/lib/animations"
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="container mx-auto px-4 py-16 md:py-24 border-t border-gray-800">
+    <section id="faq" className="container mx-auto px-4 py-16 md:py-24">
       <motion.div
         initial="hidden"
         whileInView="visible"

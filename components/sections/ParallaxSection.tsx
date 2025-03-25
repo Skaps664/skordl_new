@@ -19,7 +19,7 @@ export default function ParallaxSection() {
       <motion.div style={{ y: parallaxY }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[#9eff00]/5" />
         <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black" />
-        <div className="h-full w-full bg-[url('/placeholder.svg?height=1000&width=2000')] bg-cover bg-center" />
+        <div className="h-full w-full bg-[url('/sq_2.jpg')] bg-cover bg-center" />
       </motion.div>
 
       <div className="container mx-auto px-4 relative z-10">
