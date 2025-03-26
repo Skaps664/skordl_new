@@ -33,51 +33,33 @@ export default function TeamSection() {
       >
         {[
           {
-            name: "Alex Morgan",
+            name: "Sudais Khan",
             role: "CEO & Founder",
-            image: "/placeholder.svg?height=300&width=300",
+            image: "/su_pp.PNG",
             social: { twitter: "#", linkedin: "#", github: "#" },
           },
           {
-            name: "Sarah Chen",
-            role: "CTO",
-            image: "/placeholder.svg?height=300&width=300",
+            name: "Omer Jauhar",
+            role: "Backend Engineer",
+            image: "/oj_pp.jpeg",
             social: { twitter: "#", linkedin: "#", github: "#" },
           },
           {
-            name: "Michael Rodriguez",
-            role: "Lead Developer",
-            image: "/placeholder.svg?height=300&width=300",
+            name: "Ammar Raza",
+            role: "Lead Software Dev",
+            image: "/mb_pp.jpeg",
             social: { twitter: "#", linkedin: "#", github: "#" },
           },
           {
-            name: "Emily Parker",
+            name: "Azaz Khan",
             role: "UX/UI Designer",
-            image: "/placeholder.svg?height=300&width=300",
+            image: "/az_pp.PNG",
             social: { twitter: "#", linkedin: "#", github: "#" },
           },
           {
-            name: "David Kim",
-            role: "ML Engineer",
-            image: "/placeholder.svg?height=300&width=300",
-            social: { twitter: "#", linkedin: "#", github: "#" },
-          },
-          {
-            name: "Lisa Johnson",
-            role: "Project Manager",
-            image: "/placeholder.svg?height=300&width=300",
-            social: { twitter: "#", linkedin: "#", github: "#" },
-          },
-          {
-            name: "James Wilson",
-            role: "Backend Developer",
-            image: "/placeholder.svg?height=300&width=300",
-            social: { twitter: "#", linkedin: "#", github: "#" },
-          },
-          {
-            name: "Sophia Lee",
-            role: "Data Scientist",
-            image: "/placeholder.svg?height=300&width=300",
+            name: "Aisha Iftikhar",
+            role: "Lead Python Dev",
+            image: "/pp_ai.PNG",
             social: { twitter: "#", linkedin: "#", github: "#" },
           },
         ].map((member, index) => (
@@ -88,7 +70,7 @@ export default function TeamSection() {
                 alt={member.name}
                 width={300}
                 height={300}
-                className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                className="object-cover w-full h-full  group-hover:grayscale-5 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-4 w-full">
