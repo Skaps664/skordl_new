@@ -40,37 +40,45 @@ export default function WorkSection() {
             description: "Creating powerful digital experiences",
             number: "01",
             tags: ["React", "Node.js", "AWS"],
+            image: "/w-2.jpg",
+            link: "#",
           },
           {
             title: "MOBILE DEVELOPMENT",
             description: "Innovative solutions for mobile platforms",
             number: "02",
             tags: ["Flutter", "React Native", "iOS/Android"],
+            image: "/w-1.jpg",
+            link: "#",
           },
           {
             title: "E-COMMERCE PLATFORM",
             description: "Scalable online shopping experiences",
             number: "03",
             tags: ["Next.js", "Stripe", "Headless CMS"],
+            image: "/w-3.jpg",
+            link: "#",
           },
           {
             title: "AI-POWERED ANALYTICS",
             description: "Data-driven insights for business growth",
             number: "04",
             tags: ["Python", "TensorFlow", "Data Visualization"],
+            image: "/w-4.png",
+            link: "#",
           },
         ].map((project, index) => (
           <motion.div key={index} variants={fadeIn} className="space-y-4 group">
-            <div className="aspect-video bg-gray-900 rounded-md overflow-hidden transform transition-transform duration-500 group-hover:scale-[1.02] relative">
+            <div className="aspect-video bg-gray-900 grayscale rounded-md overflow-hidden transform transition-transform duration-800 hover:grayscale-0 group-hover:scale-[1.02] relative">
               <Image
-                src="/placeholder.svg?height=400&width=600"
+                src={project.image}
                 alt={`Project ${index + 1}`}
                 width={600}
                 height={400}
                 className="object-cover w-full h-full"
               />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <Link href="#" className="bg-[#9eff00] text-black px-4 py-2 rounded-full flex items-center">
+                <Link href={project.link} className="bg-[#9eff00] text-black px-4 py-2 rounded-full flex items-center">
                   View Project <ExternalLink className="ml-2 h-4 w-4" />
                 </Link>
               </div>
@@ -110,4 +118,3 @@ export default function WorkSection() {
     </section>
   )
 }
-
