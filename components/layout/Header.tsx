@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, MoonStar, Sun } from "lucide-react"
+import { Menu, X, MoonStar, Sun, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
 
@@ -72,8 +72,11 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
             </Link>
           ))}
 
+          {<Link href="https://www.linkedin.com/in/skordl" target="_blank" className="text-[#9eff00] hover:text-gray-400 transition-colors">
+            <Linkedin className="h-5 w-5" />
+          </Link>}
           {/* Theme Toggle */}
-          <button
+          {/* <button
             onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
             aria-label="Toggle theme"
@@ -84,7 +87,7 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
               ) : (
                 <MoonStar className="h-5 w-5 text-[#9eff00]" />
               ))}
-          </button>
+          </button> */}
         </motion.nav>
 
         {/* Mobile Menu Button */}

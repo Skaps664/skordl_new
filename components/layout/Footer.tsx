@@ -17,13 +17,13 @@ export default function Footer() {
             Creating exceptional digital experiences through innovative software solutions.
           </p>
           <div className="flex space-x-4">
-            <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+            <Link href="#" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
               <Twitter className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+            <Link href="https://www.linkedin.com/in/skordl" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
               <Linkedin className="h-5 w-5" />
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+            <Link href="https://github.com/SKORDL" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
               <Github className="h-5 w-5" />
             </Link>
           </div>
