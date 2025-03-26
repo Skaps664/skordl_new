@@ -1,10 +1,10 @@
 import Link from "next/link"
-import { Twitter, Linkedin, Github } from "lucide-react"
+import { Twitter, Linkedin, Github, Heart } from "lucide-react"
 
 export default function Footer() {
   return (
     <footer className="container mx-auto px-4 py-12 border-t border-gray-800">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
         <div>
           <Link href="/" className="flex items-center">
             <img
@@ -92,6 +92,27 @@ export default function Footer() {
         </div>
 
         <div>
+          <h3 className="font-bold mb-4">Insights</h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+                Case Studies
+              </Link>
+            </li>
+            <li>
+              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+                Activities
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
           <h3 className="font-bold mb-4">Legal</h3>
           <ul className="space-y-2">
             <li>
@@ -100,23 +121,19 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="terms-and-conditions" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <Link href="/terms-and-conditions" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
                 Terms of Service
               </Link>
             </li>
-            <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
-                Cookie Policy
-              </Link>
-            </li>
+
           </ul>
         </div>
       </div>
 
       <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
         <div className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} skordl. All rights reserved.</div>
-        <div className="text-gray-500">
-          Designed and built with <span className="text-[#9eff00]">❤️</span> by skordl team
+        <div className="text-gray-500 flex items-center justify-center">
+          Designed and built with  <span className="text-[#9eff00] mx-1"><Heart className="inline-block" /></span>  by skordl team
         </div>
       </div>
     </footer>
