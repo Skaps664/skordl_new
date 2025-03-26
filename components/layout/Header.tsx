@@ -72,7 +72,7 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
             </Link>
           ))}
 
-          {<Link href="https://www.linkedin.com/in/skordl" target="_blank" className="text-[#9eff00] hover:text-gray-400 transition-colors">
+          {<Link href="https://www.linkedin.com/company/skordl" target="_blank" className="text-[#9eff00] hover:text-gray-400 transition-colors">
             <Linkedin className="h-5 w-5" />
           </Link>}
           {/* Theme Toggle */}

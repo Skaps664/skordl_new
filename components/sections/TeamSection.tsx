@@ -104,7 +104,7 @@ export default function TeamSection() {
         className="mt-12 text-center"
       >
         <Link
-          href="/careers"
+          href="https://www.linkedin.com/company/skordl/jobs/" target="_blank"
           className="inline-flex items-center px-6 py-3 border border-white rounded-full hover:bg-[#9eff00] hover:text-black hover:border-[#9eff00] transition-all duration-300"
         >
           Join Our Team <ArrowRight className="ml-2 h-4 w-4" />

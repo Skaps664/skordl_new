@@ -1,6 +1,7 @@
 import type React from "react"
 import "./globals.css"
 import { Inter } from "next/font/google"
+import ClientLayout from "./ClientLayout"
 import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"], display: "swap" })
@@ -29,15 +30,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-          storageKey="skordl-theme"
-        >
-          {children}
-        </ThemeProvider>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   )

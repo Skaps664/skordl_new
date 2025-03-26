@@ -20,7 +20,7 @@ export default function Footer() {
             <Link href="#" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
               <Twitter className="h-5 w-5" />
             </Link>
-            <Link href="https://www.linkedin.com/in/skordl" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+            <Link href="https://www.linkedin.com/company/skordl" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
               <Linkedin className="h-5 w-5" />
             </Link>
             <Link href="https://github.com/SKORDL" target="_blank" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
@@ -95,12 +95,12 @@ export default function Footer() {
           <h3 className="font-bold mb-4">Legal</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
                 Privacy Policy
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <Link href="terms-and-conditions" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
                 Terms of Service
               </Link>
             </li>
