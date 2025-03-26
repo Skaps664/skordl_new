@@ -1,34 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, MessageSquare, Globe, Zap } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion"; // Import AnimatePresence for animations
+import { ArrowRight, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactSection() {
     const form = useRef(null);
     const [showMessage, setShowMessage] = useState(false);
+    const [showCalendly, setShowCalendly] = useState(false);
+    const calendlyRef = useRef(null);
 
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs
             .sendForm(
-                "service_yi81rth", // Replace with your EmailJS Service ID
-                "template_sf2is5f", // Replace with your EmailJS Template ID
+                "service_yi81rth",
+                "template_sf2is5f",
                 form.current,
-                "y5vpJbhT8-CKmMx8Y" // Replace with your EmailJS Public Key
+                "y5vpJbhT8-CKmMx8Y"
             )
             .then(
                 (result) => {
                     console.log("SUCCESS!", result.text);
-                    setShowMessage(true); // Show the success message
+                    setShowMessage(true);
                     form.current.reset();
 
                     setTimeout(() => {
-                        setShowMessage(false); // Hide the message after 3 sec
+                        setShowMessage(false);
                     }, 3000);
                 },
                 (error) => {
@@ -38,10 +40,62 @@ export default function ContactSection() {
             );
     };
 
+    const handleBookNowClick = () => {
+        setShowCalendly(true);
+    };
+
+    const handleCloseCalendly = () => {
+        setShowCalendly(false);
+    };
+
+    useEffect(() => {
+        // Dynamically load Calendly widget CSS
+        const cssLink = document.createElement('link');
+        cssLink.href = 'https://assets.calendly.com/assets/external/widget.css';
+        cssLink.rel = 'stylesheet';
+        document.head.appendChild(cssLink);
+
+        // Dynamically load Calendly widget JS
+        const script = document.createElement('script');
+        script.src = 'https://assets.calendly.com/assets/external/widget.js';
+        script.type = 'text/javascript';
+        script.async = true;
+        document.body.appendChild(script);
+
+        // Initialize Calendly widget when script loads
+        script.onload = () => {
+            if (showCalendly && window.Calendly) {
+                window.Calendly.initPopupWidget({
+                    url: 'https://calendly.com/sudais-skaps/30min?background_color=1a1a1a&text_color=ffffff&primary_color=21e316&hide_landing_page_details=1'
+                });
+            }
+        };
+
+        // Cleanup
+        return () => {
+            document.head.removeChild(cssLink);
+            document.body.removeChild(script);
+        };
+    }, [showCalendly]);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (calendlyRef.current && !calendlyRef.current.contains(event.target)) {
+                setShowCalendly(false);
+            }
+        };
+
+        if (showCalendly) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [showCalendly]);
+
     return (
         <section id="contact" className="container mx-auto px-4 py-16 md:py-48">
-
-            {/* ✅ Toast Notification - Uses AnimatePresence for smooth fading */}
             <AnimatePresence>
                 {showMessage && (
                     <motion.div
@@ -51,11 +105,36 @@ export default function ContactSection() {
                         className="fixed inset-0 flex items-center justify-center z-50"
                     >
                         <div className="bg-gray-800 text-white px-6 py-3 rounded-md shadow-lg text-sm opacity-90">
-                            ✅ Thank you! Your inquiry has been sent. We’ll get back shortly.
+                            ✅ Thank you! Your inquiry has been sent. We'll get back shortly.
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            {showCalendly && (
+                <div className="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4 overflow-hidden">
+                    <motion.div
+                        ref={calendlyRef}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="relative w-full max-w-5xl h-[90vh] bg-[#1a1a1a] border-2 border-[#9eff00] rounded-xl shadow-2xl overflow-hidden"
+                    >
+                        <div className="absolute top-4 right-4 z-60">
+                            <button
+                                onClick={handleCloseCalendly}
+                                className="text-[#9eff00] hover:text-white transition-colors duration-300 bg-black/50 p-2 rounded-full"
+                            >
+                                <X size={24} />
+                            </button>
+                        </div>
+                        <div
+                            id="calendly-popup"
+                            className="w-full h-full"
+                        ></div>
+                    </motion.div>
+                </div>
+            )}
 
             <motion.div
                 initial="hidden"
@@ -78,6 +157,39 @@ export default function ContactSection() {
                         >
                             Let's discuss <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
+                    </motion.div>
+                    <motion.h2 variants={fadeIn} className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 mt-8">
+                        OR Book a free consultation
+                    </motion.h2>
+                    <motion.div variants={fadeIn}>
+                        <button
+                            onClick={handleBookNowClick}
+                            className="inline-flex items-center px-6 py-3 border border-white rounded-full hover:bg-[#9eff00] hover:text-black hover:border-[#9eff00] transition-all duration-300"
+                        >
+                            Book Now <ArrowRight className="ml-2 h-4 w-4" />
+                        </button>
+                    </motion.div>
+                    <motion.div variants={staggerContainer} className="space-y-8 mt-14">
+                        {[
+                            {
+                                title: "Sudais Khan",
+                                authors: "Peshawar, Pakistan | Remote",
+                                date: "+92 325 9327819",
+                            },
+                        ].map((paper, index) => (
+                            <motion.div
+                                key={index}
+                                variants={fadeIn}
+                                className="border-l-2 border-[#9eff00] pl-4 py-2 hover:bg-gray-900/50 transition-colors duration-300"
+                            >
+                                <h4 className="text-lg font-bold">{paper.title}</h4>
+                                <p className="text-gray-400">{paper.authors}</p>
+                                <div className="flex justify-between mt-2 text-sm">
+                                    <span>{paper.date}</span>
+                                    <span className="text-[#9eff00]">{paper.journal}</span>
+                                </div>
+                            </motion.div>
+                        ))}
                     </motion.div>
                 </div>
 
@@ -165,8 +277,10 @@ export default function ContactSection() {
                             Send Message
                         </button>
                     </form>
+
                 </motion.div>
             </motion.div>
+
         </section>
     );
 }
