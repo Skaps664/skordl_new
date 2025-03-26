@@ -100,7 +100,7 @@ export default function BlogPage() {
                             <div className="flex items-center">
                                 <span className="text-sm text-gray-500 mr-3">By {post.author}</span>
                                 <Link
-                                    href={`/blog/${post.slug}`}
+                                    href={`/blog-posts/${post.slug}`}
                                     className="ml-auto inline-flex items-center text-[#9eff00] hover:underline"
                                 >
                                     Read More <ArrowRight className="ml-2 h-4 w-4" />

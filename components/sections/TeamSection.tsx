@@ -36,31 +36,31 @@ export default function TeamSection() {
             name: "Sudais Khan",
             role: "CEO & Founder",
             image: "/su_pp.PNG",
-            social: { twitter: "#", linkedin: "#", github: "#" },
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/sudaisk/", github: "https://github.com/skaps664" },
           },
           {
             name: "Omer Jauhar",
             role: "Backend Engineer",
             image: "/oj_pp.jpeg",
-            social: { twitter: "#", linkedin: "#", github: "#" },
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/muhammad-omer-jauhar-khan-51aa671b9/", github: "https://github.com/omerjauhar" },
           },
           {
             name: "Ammar Raza",
             role: "Lead Software Dev",
             image: "/mb_pp.jpeg",
-            social: { twitter: "#", linkedin: "#", github: "#" },
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/mubeen-ali-shah-b64263292/", github: "" },
           },
           {
             name: "Azaz Khan",
             role: "UX/UI Designer",
             image: "/az_pp.PNG",
-            social: { twitter: "#", linkedin: "#", github: "#" },
+            social: { twitter: "#", linkedin: "", github: "" },
           },
           {
             name: "Aisha Iftikhar",
             role: "Lead Python Dev",
             image: "/pp_ai.PNG",
-            social: { twitter: "#", linkedin: "#", github: "#" },
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/aisha-iftikhar-ai231/", github: "" },
           },
         ].map((member, index) => (
           <motion.div key={index} variants={fadeIn} className="bg-gray-900 rounded-md overflow-hidden group">
@@ -75,21 +75,21 @@ export default function TeamSection() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-4 w-full">
                   <div className="flex justify-center space-x-4">
-                    <Link href={member.social.twitter} className="text-white hover:text-[#9eff00]">
+                    {/* <Link href={member.social.twitter} className="text-white hover:text-[#9eff00]">
                       <Twitter className="h-5 w-5" />
-                    </Link>
-                    <Link href={member.social.linkedin} className="text-white hover:text-[#9eff00]">
+                    </Link> */}
+                    <Link href={member.social.linkedin} target="_blank" className="text-white hover:text-[#9eff00]">
                       <Linkedin className="h-5 w-5" />
                     </Link>
-                    <Link href={member.social.github} className="text-white hover:text-[#9eff00]">
+                    {/* <Link href={member.social.github} className="text-white hover:text-[#9eff00]">
                       <Github className="h-5 w-5" />
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
             </div>
             <div className="p-4">
-              <h3 className="font-bold">{member.name}</h3>
+              <h3 className="">{member.name}</h3>
               <p className="text-[#9eff00] text-sm">{member.role}</p>
             </div>
           </motion.div>
