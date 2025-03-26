@@ -55,12 +55,12 @@ export default function ServicesSection() {
           {
             title: "DATA ENGINEERING",
             icon: <DatabaseBackup className="h-5 w-5 text-[#9eff00]" />,
-            description: "Pushing the boundaries of what's possible with technology.",
+            description: "Transforming raw data into actionable insights with robust pipelines.",
           },
           {
             title: "BACKEND SERVICES",
             icon: <Vault className="h-5 w-5 text-[#9eff00]" />,
-            description: "Pushing the boundaries of what's possible with technology.",
+            description: "Scalable and secure server-side solutions for seamless performance.",
           },
         ].map((service, index) => (
           <motion.div
