@@ -29,7 +29,7 @@ export default function TeamSection() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8"
+        className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8"
       >
         {[
           {
@@ -68,8 +68,8 @@ export default function TeamSection() {
               <Image
                 src={member.image || "/placeholder.svg"}
                 alt={member.name}
-                width={300}
-                height={300}
+                width={200}
+                height={200}
                 className="object-cover w-full h-full  group-hover:grayscale-5 transition-all duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
@@ -113,4 +113,3 @@ export default function TeamSection() {
     </section>
   )
 }
-
