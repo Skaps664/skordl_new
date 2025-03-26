@@ -27,6 +27,7 @@ function InteractiveParticles() {
 
     const initParticles = () => {
       particles = []
+      // Reduced particle count (now using 10 instead of 5)
       const particleCount = Math.floor(canvas.width / 10)
 
       for (let i = 0; i < particleCount; i++) {
@@ -69,7 +70,8 @@ function InteractiveParticles() {
     }
 
     const connectParticles = () => {
-      const maxDistance = 100
+      // Increased max distance for lines between particles
+      const maxDistance = 120
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i; j < particles.length; j++) {
@@ -81,8 +83,10 @@ function InteractiveParticles() {
             ctx.beginPath()
             ctx.strokeStyle =
               particles[i].color === "#9eff00" || particles[j].color === "#9eff00" ? "#9eff00" : "#ffffff"
-            ctx.globalAlpha = 0.2 * (1 - distance / maxDistance)
-            ctx.lineWidth = 1
+            // Slightly increased line opacity
+            ctx.globalAlpha = 0.25 * (1 - distance / maxDistance)
+            // Slightly increased line width
+            ctx.lineWidth = 1.2
             ctx.moveTo(particles[i].x, particles[i].y)
             ctx.lineTo(particles[j].x, particles[j].y)
             ctx.stroke()
@@ -106,13 +110,18 @@ function InteractiveParticles() {
         const distance = Math.sqrt(dx * dx + dy * dy)
 
         if (distance < 100) {
-          particle.x += dx * 0.02
-          particle.y += dy * 0.02
+          // Gentle mouse attraction effect
+          particle.x += dx * 0.05
+          particle.y += dy * 0.05
         }
       })
     }
 
-    canvas.addEventListener("mousemove", handleMouseMove)
+    // Add mouse event listener to the whole section
+    const heroSection = canvas.closest('#hero')
+    if (heroSection) {
+      heroSection.addEventListener("mousemove", handleMouseMove)
+    }
 
     resize()
     window.addEventListener("resize", resize)
@@ -126,22 +135,29 @@ function InteractiveParticles() {
 
     return () => {
       window.removeEventListener("resize", resize)
-      canvas.removeEventListener("mousemove", handleMouseMove)
+      if (heroSection) {
+        heroSection.removeEventListener("mousemove", handleMouseMove)
+      }
     }
   }, [])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
+  return <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
 }
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="container mx-auto px-4 py-16 md:py-32">
+    <section id="hero" className="container mx-auto px-4 py-16 md:py-32 relative">
+      {/* Place the InteractiveParticles behind all content */}
+      <div className="absolute inset-0 overflow-hidden">
+        <InteractiveParticles />
+      </div>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 relative z-10"
       >
         <div className="space-y-6">
           <motion.p variants={fadeIn} className="text-[#9eff00]">
@@ -162,9 +178,6 @@ export default function HeroSection() {
             >
               Let's discuss <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
-          </motion.div>
-          <motion.div variants={fadeIn} className="mt-8 h-[480px] w-full relative overflow-hidden rounded-lg">
-            <InteractiveParticles />
           </motion.div>
         </div>
         <motion.div variants={fadeIn} className="grid grid-cols-2 gap-4">
@@ -217,4 +230,3 @@ export default function HeroSection() {
     </section>
   )
 }
-
