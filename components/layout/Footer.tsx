@@ -1,7 +1,17 @@
-import Link from "next/link"
-import { Twitter, Linkedin, Github, Heart } from "lucide-react"
+"use client";
+
+import Link from "next/link";
+import { Twitter, Linkedin, Github, Heart } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+
+  // Function to handle section navigation
+  const handleSectionNavigation = (section: string) => {
+    router.push(`/#${section}`);
+  };
+
   return (
     <footer className="container mx-auto px-4 py-12 border-t border-gray-800">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-12">
@@ -33,29 +43,44 @@ export default function Footer() {
           <h3 className="font-bold mb-4">Services</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("services")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Software Development
-              </Link>
+              </button>
             </li>
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("services")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 UI/UX Design
-              </Link>
+              </button>
             </li>
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("services")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Machine Learning
-              </Link>
+              </button>
             </li>
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("services")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Research & Development
-              </Link>
+              </button>
             </li>
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("services")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Consulting
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -64,14 +89,20 @@ export default function Footer() {
           <h3 className="font-bold mb-4">Company</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#about" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("about")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 About Us
-              </Link>
+              </button>
             </li>
             <li>
-              <Link href="#team" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("team")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Our Team
-              </Link>
+              </button>
             </li>
             <li>
               <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
@@ -79,9 +110,12 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link href="#contact" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <button
+                onClick={() => handleSectionNavigation("contact")}
+                className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300 text-left w-full"
+              >
                 Contact
-              </Link>
+              </button>
             </li>
           </ul>
         </div>
@@ -90,7 +124,7 @@ export default function Footer() {
           <h3 className="font-bold mb-4">Insights</h3>
           <ul className="space-y-2">
             <li>
-              <Link href="#" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
+              <Link href="/blog-posts" className="text-gray-400 hover:text-[#9eff00] transition-colors duration-300">
                 Blog
               </Link>
             </li>
@@ -120,18 +154,22 @@ export default function Footer() {
                 Terms of Service
               </Link>
             </li>
-
           </ul>
         </div>
       </div>
 
       <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-        <div className="text-gray-500 mb-4 md:mb-0">© {new Date().getFullYear()} skordl. All rights reserved.</div>
+        <div className="text-gray-500 mb-4 md:mb-0">
+          © {new Date().getFullYear()} skordl. All rights reserved.
+        </div>
         <div className="text-gray-500 flex items-center justify-center">
-          Designed and built with  <span className="text-[#9eff00] mx-1"><Heart className="inline-block" /></span>  by skordl team
+          Designed and built with{" "}
+          <span className="text-[#9eff00] mx-1">
+            <Heart className="inline-block" />
+          </span>{" "}
+          by skordl team
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

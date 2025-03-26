@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Menu, X, MoonStar, Sun, Linkedin } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTheme } from "next-themes"
@@ -14,6 +15,7 @@ interface HeaderProps {
 }
 
 export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOpen }: HeaderProps) {
+  const router = useRouter();
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -21,6 +23,11 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Handle section navigation
+  const handleSectionNavigation = (section: string) => {
+    router.push(`/#${section}`);
+  };
 
   // Prevent hydration mismatch
   const currentTheme = mounted ? theme : "dark"
@@ -46,7 +53,6 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
           </Link>
         </motion.div>
 
-
         {/* Desktop Navigation */}
         <motion.nav
           initial={{ opacity: 0, y: -10 }}
@@ -62,32 +68,19 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
             { name: "Team", href: "#team" },
             { name: "Contact", href: "#contact" },
           ].map((item, index) => (
-            <Link
+            <button
               key={index}
-              href={item.href}
-              className={`hover:text-[#9eff00] transition-colors duration-300 ${activeSection === item.href.substring(1) ? "text-[#9eff00]" : ""
+              onClick={() => handleSectionNavigation(item.href.substring(1))}
+              className={`hover:text-[#9eff00] transition-colors duration-300 text-left ${activeSection === item.href.substring(1) ? "text-[#9eff00]" : ""
                 }`}
             >
               {item.name}
-            </Link>
+            </button>
           ))}
 
           {<Link href="https://www.linkedin.com/company/skordl" target="_blank" className="text-[#9eff00] hover:text-gray-400 transition-colors">
             <Linkedin className="h-5 w-5" />
           </Link>}
-          {/* Theme Toggle */}
-          {/* <button
-            onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
-            className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
-            aria-label="Toggle theme"
-          >
-            {mounted &&
-              (currentTheme === "dark" ? (
-                <Sun className="h-5 w-5 text-[#9eff00]" />
-              ) : (
-                <MoonStar className="h-5 w-5 text-[#9eff00]" />
-              ))}
-          </button> */}
         </motion.nav>
 
         {/* Mobile Menu Button */}
@@ -122,4 +115,3 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
     </header>
   )
 }
-
