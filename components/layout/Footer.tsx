@@ -55,7 +55,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <ClutchWidget/>
+          
           <div>
             <h3 className="font-bold mb-4">Services</h3>
             <ul className="space-y-2">
@@ -171,6 +171,7 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
+              <li><ClutchWidget/></li>
             </ul>
           </div>
         </div>
