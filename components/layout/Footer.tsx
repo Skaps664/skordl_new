@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import Script from "next/script";
 import { Twitter, Linkedin, Github, Heart } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useRef } from "react";
+import ClutchWidget from "../ClutchWidget";
 
 
 // Extend the Window interface to include clutchwp
@@ -19,7 +18,6 @@ declare global {
 
 export default function Footer() {
   const router = useRouter();
-  const clutchWidgetRef = useRef<HTMLDivElement>(null);
 
 
   // Function to handle section navigation
@@ -27,35 +25,6 @@ export default function Footer() {
     router.push(`/#${section}`);
   };
 
-  useEffect(() => {
-    // Check if we're in browser environment
-    if (typeof window !== 'undefined') {
-      // Create script element
-      const script = document.createElement('script');
-      script.src = 'https://widget.clutch.co/static/js/widget.js';
-      script.async = true;
-      script.type = 'text/javascript';
-
-      // Append script to body
-      document.body.appendChild(script);
-
-      // Optional: Manually trigger widget load after script is added
-      script.onload = () => {
-        if (window.clutchwp && clutchWidgetRef.current) {
-          try {
-            window.clutchwp.init(clutchWidgetRef.current);
-          } catch (error) {
-            console.error('Clutch widget initialization failed:', error);
-          }
-        }
-      };
-
-      // Cleanup
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, []);
 
 
   return (
@@ -86,6 +55,7 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+          <ClutchWidget/>
           <div>
             <h3 className="font-bold mb-4">Services</h3>
             <ul className="space-y-2">
@@ -131,7 +101,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-
+          
           <div>
             <h3 className="font-bold mb-4">Company</h3>
             <ul className="space-y-2">
@@ -203,19 +173,6 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="relative w-full">
-        <div 
-          ref={clutchWidgetRef}
-          className="clutch-widget" 
-          data-url="https://widget.clutch.co" 
-          data-widget-type="2" 
-          data-height="45" 
-          data-nofollow="true" 
-          data-expandifr="true" 
-          data-scale="100" 
-          data-clutchcompany-id="2500131"
-        ></div>
-      </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
