@@ -79,7 +79,7 @@ export default function BlogPage() {
                     >
                         <div className="aspect-video relative">
                             <Image
-                                src={post.image || "/placeholder.svg"}
+                                src={post.image || ""}
                                 alt={post.title}
                                 fill
                                 className="object-cover w-full h-full group-hover:scale-105 transition-all duration-500"

@@ -66,7 +66,7 @@ export default function TeamSection() {
           <motion.div key={index} variants={fadeIn} className="bg-gray-900 rounded-md overflow-hidden group">
             <div className="aspect-square relative">
               <Image
-                src={member.image || "/placeholder.svg"}
+                src={member.image || ""}
                 alt={member.name}
                 width={200}
                 height={200}

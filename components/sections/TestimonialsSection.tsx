@@ -53,28 +53,28 @@ export default function TestimonialsSection() {
                 "skordl transformed our business with their innovative software solutions. Their team's expertise and dedication exceeded our expectations.",
               author: "Jahandad Adam",
               position: "TechVision Inc.",
-              image: "/placeholder.svg?height=100&width=100",
+              image: "/ss.PNG?height=100&width=100",
             },
             {
               quote:
                 "Working with skordl was a game-changer for our company. Their attention to detail and commitment to excellence is unmatched in the industry.",
               author: "Sohail Khan",
               position: "CTO at Awez Corp",
-              image: "/placeholder.svg?height=100&width=100",
+              image: "/ss.PNG?height=100&width=100",
             },
             {
               quote:
                 "The team at skordl delivered a complex project on time and within budget. Their technical expertise and communication made the process seamless.",
               author: "Maria Rodriguez",
               position: "GlobalTech",
-              image: "/placeholder.svg?height=100&width=100",
+              image: "/ss.PNG?height=100&width=100",
             },
             {
               quote:
                 "skordl's research-driven approach to software development helped us stay ahead of the competition. They're true partners in our success.",
               author: "Adnan Khan",
               position: "Solar Express",
-              image: "/placeholder.svg?height=100&width=100",
+              image: "/ss.PNG?height=100&width=100",
             },
           ].map((testimonial, index) => (
             <motion.div key={index} variants={fadeIn} className="bg-gray-900/80 p-6 md:p-8 rounded-md relative backdrop-blur-md">
@@ -83,11 +83,11 @@ export default function TestimonialsSection() {
               <div className="flex items-center">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
                   <Image
-                    src={testimonial.image || "/placeholder.svg"}
+                    src={testimonial.image || "/ss.PNG"}
                     alt={testimonial.author}
-                    width={100}
-                    height={100}
-                    className="object-cover w-full h-full"
+                    width={50} // Reduce the width
+                    height={50} // Reduce the height
+                    className="object-cover"
                   />
                 </div>
                 <div>

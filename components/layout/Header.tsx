@@ -86,7 +86,7 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
         {/* Mobile Menu Button */}
         <div className="flex items-center space-x-4 md:hidden">
           {/* Theme Toggle for Mobile */}
-          <button
+          {/* <button
             onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
             aria-label="Toggle theme"
@@ -97,7 +97,7 @@ export default function Header({ scrollY, activeSection, isMenuOpen, setIsMenuOp
               ) : (
                 <MoonStar className="h-5 w-5 text-[#9eff00]" />
               ))}
-          </button>
+          </button> */}
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
