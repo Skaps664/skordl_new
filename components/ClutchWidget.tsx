@@ -5,21 +5,24 @@ import Script from 'next/script';
 
 interface ClutchWidgetProps {
   companyId?: string;
-  height?: number;
-  scale?: number;
+  backgroundColor?: string;
+  customClass?: string;
 }
 
 const ClutchWidget: React.FC<ClutchWidgetProps> = ({ 
   companyId = '2500131',
+  backgroundColor = 'transparent', // Default transparent
+  customClass = '' // Allow additional custom classes
 }) => {
   return (
-    <div>
-      {/* <h3 className="font-bold mb-4">Clutch Reviews</h3> */}
+    <div 
+      className={`clutch-widget-container ${customClass}`} 
+      style={{ backgroundColor }}
+    >
       <Script
         src="https://widget.clutch.co/static/js/widget.js"
         strategy="afterInteractive"
         onLoad={() => {
-          // Attempt to initialize the widget
           const widgetElement = document.querySelector('.clutch-widget');
           if (window.clutchwp && window.clutchwp.init && widgetElement) {
             window.clutchwp.init(widgetElement as HTMLElement);
@@ -33,6 +36,10 @@ const ClutchWidget: React.FC<ClutchWidgetProps> = ({
         data-nofollow="true" 
         data-expandifr="true"
         data-clutchcompany-id={companyId}
+        style={{ 
+          border: 'none', 
+          overflow: 'hidden' 
+        }}
       />
     </div>
   );

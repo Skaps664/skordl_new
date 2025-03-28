@@ -31,7 +31,7 @@ export default function Footer() {
     <>
       
       <footer className="container mx-auto px-4 py-12 border-t border-gray-800">
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-7 mb-12">
           <div>
             <Link href="/" className="flex items-center">
               <img
@@ -171,9 +171,10 @@ export default function Footer() {
                   Terms of Service
                 </Link>
               </li>
-              <li><ClutchWidget/></li>
+              
             </ul>
           </div>
+          <div><li><ClutchWidget/></li></div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
