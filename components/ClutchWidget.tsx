@@ -10,13 +10,12 @@ interface ClutchWidgetProps {
 }
 
 const ClutchWidget: React.FC<ClutchWidgetProps> = ({ 
-  companyId = '2500131', 
-  height = 45, 
+  companyId = '2500131',
   scale = 100 
 }) => {
   return (
     <div>
-      <h3 className="font-bold mb-4">Clutch Reviews</h3>
+      {/* <h3 className="font-bold mb-4">Clutch Reviews</h3> */}
       <Script
         src="https://widget.clutch.co/static/js/widget.js"
         strategy="afterInteractive"
@@ -31,8 +30,7 @@ const ClutchWidget: React.FC<ClutchWidgetProps> = ({
       <div 
         className="clutch-widget" 
         data-url="https://widget.clutch.co" 
-        data-widget-type="2" 
-        data-height={height} 
+        data-widget-type="2"
         data-nofollow="true" 
         data-expandifr="true" 
         data-scale={scale} 
