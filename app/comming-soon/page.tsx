@@ -85,7 +85,8 @@ export default function ComingSoon() {
               <span>Thank you! We'll notify you when we release.</span>
             </div>
           )}
-        </div></motion.div>
+        </div>
+        </motion.div>
     </div>
   )
 }

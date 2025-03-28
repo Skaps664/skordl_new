@@ -76,7 +76,7 @@ export default function ServicesSection() {
               </div>
             </div>
             <Link
-              href="#"
+              href="/comming-soon"
               className="text-[#9eff00] flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shrink-0"
             >
               <span className="hidden sm:inline-block mr-2">Read More</span>

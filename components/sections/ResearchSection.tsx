@@ -56,7 +56,7 @@ export default function ResearchSection() {
             {research.icon}
             <h3 className="text-xl font-bold mb-4">{research.title}</h3>
             <p className="text-gray-400 mb-6">{research.description}</p>
-            <Link href="#" className="text-[#9eff00] flex items-center group">
+            <Link href="/comming-soon" className="text-[#9eff00] flex items-center group">
               Learn more{" "}
               <ArrowRight className="ml-2 h-4 w-4 transform transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
