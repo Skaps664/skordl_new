@@ -29,7 +29,7 @@ export default function TeamSection() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={staggerContainer}
-        className="grid grid-cols-2 md:grid-cols-5 gap-6 md:gap-8"
+        className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8"
       >
         {[
           {
@@ -37,6 +37,12 @@ export default function TeamSection() {
             role: "CEO & Founder",
             image: "/su_pp.PNG",
             social: { twitter: "#", linkedin: "https://www.linkedin.com/in/sudaisk/", github: "https://github.com/skaps664" },
+          },
+          {
+            name: "Aisha Iftikhar",
+            role: "Lead Python Dev",
+            image: "/ai_pp.png",
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/aisha-iftikhar-ai231/", github: "" },
           },
           {
             name: "Omer Jauhar",
@@ -57,11 +63,12 @@ export default function TeamSection() {
             social: { twitter: "#", linkedin: "", github: "" },
           },
           {
-            name: "Aisha Iftikhar",
-            role: "Lead Python Dev",
-            image: "/pp_ai.PNG",
-            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/aisha-iftikhar-ai231/", github: "" },
+            name: "Mubeen Ali Shah",
+            role: "Lead QA",
+            image: "/am_pp.png",
+            social: { twitter: "#", linkedin: "https://www.linkedin.com/in/ammar-chattha-239919230/", github: "" },
           },
+          
         ].map((member, index) => (
           <motion.div key={index} variants={fadeIn} className="bg-gray-900 rounded-md overflow-hidden group">
             <div className="aspect-square relative">

@@ -37,6 +37,8 @@ const ClutchWidget: React.FC<ClutchWidgetProps> = ({
         data-expandifr="true"
         data-clutchcompany-id={companyId}
         style={{ 
+          width: '100%', 
+          maxWidth: '100%', 
           border: 'none', 
           overflow: 'hidden' 
         }}
