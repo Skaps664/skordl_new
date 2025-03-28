@@ -174,7 +174,9 @@ export default function Footer() {
               
             </ul>
           </div>
-          <div><ClutchWidget/></div>
+          <div>
+          <ClutchWidget backgroundColor="black" />
+          </div>
         </div>
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">

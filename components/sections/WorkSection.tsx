@@ -109,10 +109,10 @@ export default function WorkSection() {
         className="mt-8 flex justify-end"
       >
         <Link
-          href="#"
+          href="#contact"
           className="inline-flex items-center text-white hover:text-[#9eff00] transition-colors duration-300"
         >
-          View all projects <ArrowRight className="ml-2 h-4 w-4" />
+          Discuss your Vision <ArrowRight className="ml-2 h-4 w-4" />
         </Link>
       </motion.div>
     </section>
