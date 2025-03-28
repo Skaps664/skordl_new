@@ -110,14 +110,14 @@ export default function NotFound() {
         </motion.p>
 
         <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          <Link href="/" className="inline-flex items-center text-gray-400 hover:text-[#9eff00] transition-colors">
+          <Link href="/" className="inline-flex items-center text-[#9eff00] hover:text-gray-400 transition-colors">
             <Home className="mr-2 h-5 w-5" />
             Return to Homepage
           </Link>
 
           <Link
             href="/blog-posts"
-            className="inline-flex items-center text-gray-400 hover:text-[#9eff00] transition-colors"
+            className="inline-flex items-center text-[#9eff00] hover:text-gray-400 transition-colors"
           >
             Explore Our Blog
             <ArrowRight className="ml-2 h-5 w-5" />

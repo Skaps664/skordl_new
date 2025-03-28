@@ -26,11 +26,6 @@ export default function ComingSoon() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white p-4">
-      <div className="absolute top-6 left-6">
-        <Link href="/" className="inline-flex items-center text-gray-400 hover:text-[#9eff00] transition-colors">
-          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Home
-        </Link>
-      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
