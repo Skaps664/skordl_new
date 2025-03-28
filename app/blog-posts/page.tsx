@@ -6,44 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Calendar, Clock } from "lucide-react"
 import { fadeIn, staggerContainer } from "@/lib/animations"
 
-const blogPosts = [
-    {
-        title: "The Future of AI in Software Development",
-        excerpt: "Exploring how artificial intelligence is transforming the way we build and design software applications.",
-        author: "Sudais Khan",
-        date: "March 15, 2024",
-        readTime: "5 min read",
-        image: "/po-1.jpg",
-        slug: "ai-in-software-development"
-    },
-    {
-        title: "Microservices Architecture: Breaking Down Monoliths",
-        excerpt: "A comprehensive guide to transitioning from monolithic to microservices architecture in modern web applications.",
-        author: "Omer Jauhar",
-        date: "February 28, 2024",
-        readTime: "7 min read",
-        image: "po-2.jpg",
-        slug: "microservices-architecture"
-    },
-    {
-        title: "UX Design Principles for Startup Success",
-        excerpt: "Key design strategies that can help startups create intuitive and engaging user experiences.",
-        author: "Azaz Khan",
-        date: "February 10, 2024",
-        readTime: "6 min read",
-        image: "/po-3.jpg",
-        slug: "ux-design-principles"
-    },
-    {
-        title: "Python Performance Optimization Techniques",
-        excerpt: "Advanced techniques to improve the performance and efficiency of your Python applications.",
-        author: "Aisha Iftikhar",
-        date: "January 22, 2024",
-        readTime: "8 min read",
-        image: "/po-4.jpg",
-        slug: "python-performance-optimization"
-    }
-]
+import { blogPosts } from "./blogPosts"
 
 export default function BlogPage() {
 
