@@ -42,7 +42,7 @@ export default function BlogPostPage() {
           <span>By {post.author}</span>
         </div>
 
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{post.title}</h1>
+        <h1 className="text-[#9eff00] text-3xl md:text-4xl lg:text-5xl font-bold mb-6">{post.title}</h1>
 
         <div className="prose prose-lg prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: post.content }} />
       </motion.div>
