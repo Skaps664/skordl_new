@@ -11,7 +11,6 @@ interface ClutchWidgetProps {
 
 const ClutchWidget: React.FC<ClutchWidgetProps> = ({ 
   companyId = '2500131',
-  scale = 100 
 }) => {
   return (
     <div>
@@ -32,8 +31,7 @@ const ClutchWidget: React.FC<ClutchWidgetProps> = ({
         data-url="https://widget.clutch.co" 
         data-widget-type="2"
         data-nofollow="true" 
-        data-expandifr="true" 
-        data-scale={scale} 
+        data-expandifr="true"
         data-clutchcompany-id={companyId}
       />
     </div>
