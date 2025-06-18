@@ -58,7 +58,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <section className="container mx-auto px-4 py-16 md:py-32 text-white">
+    <section className="container mx-auto px-4 py-24 md:py-32 text-white">
       <motion.div
         initial="hidden"
         whileInView="visible"

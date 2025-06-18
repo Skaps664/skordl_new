@@ -41,7 +41,7 @@ export default function WorkSection() {
             number: "01",
             tags: ["React", "Node.js", "AWS"],
             image: "/w-2.jpg",
-            link: "/comming-soon",
+            link: "/projects",
           },
           {
             title: "MOBILE DEVELOPMENT",
@@ -49,7 +49,7 @@ export default function WorkSection() {
             number: "02",
             tags: ["Flutter", "React Native", "iOS/Android"],
             image: "/w-1.jpg",
-            link: "/comming-soon",
+            link: "/projects",
           },
           {
             title: "E-COMMERCE PLATFORM",
@@ -57,7 +57,7 @@ export default function WorkSection() {
             number: "03",
             tags: ["Next.js", "Stripe", "Headless CMS"],
             image: "/w-3.jpg",
-            link: "/comming-soon",
+            link: "/projects",
           },
           {
             title: "AI-POWERED ANALYTICS",
@@ -65,7 +65,7 @@ export default function WorkSection() {
             number: "04",
             tags: ["Python", "TensorFlow", "Data Visualization"],
             image: "/w-4.png",
-            link: "/comming-soon",
+            link: "/projects",
           },
         ].map((project, index) => (
           <motion.div key={index} variants={fadeIn} className="space-y-4 group">
