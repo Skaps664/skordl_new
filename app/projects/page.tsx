@@ -5,6 +5,34 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/animations";
 
 const projects = [
+    {
+    title: "Solar Express",
+    description: "Marketplace platform for solar products, focusing on speed and clarity.",
+    url: "https://solarexpress.vercel.app/",
+    tags: ["Marketplace", "Green Tech", "Tailwind"],
+    image: "./p1.PNG"
+  },
+    {
+    title: "Haarshe Online",
+    description: "Elegant and responsive UI for a fashion and lifestyle eCommerce brand.",
+    url: "https://haarsheonline.net/",
+    tags: ["E-Commerce", "Fashion", "Responsive"],
+    image: "./p2.PNG"
+  },
+    {
+    title: "Easy Startup",
+    description: "Comprehensive startup management tool with mentor tracking features.",
+    url: "https://easystartup.vercel.app/",
+    tags: ["Startup", "Management", "Mentor Monitoring"],
+    image: "./p9.png"
+  },
+  {
+    title: "dekord",
+    description: "Elegant and responsive UI with comprehensive backend for a tech eCommerce brand.",
+    url: "https://dekord.online/",
+    tags: ["E-Commerce", "Fashion", "Responsive"],
+    image: "./p8.png"
+  },
   {
     title: "Finwise",
     description: "A modern finance platform designed to simplify personal and business budgeting.",
@@ -40,20 +68,8 @@ const projects = [
     tags: ["CMS", "E-Commerce", "Enterprise"],
     image: "./p3.PNG"
   },
-  {
-    title: "Haarshe Online",
-    description: "Elegant and responsive UI for a fashion and lifestyle eCommerce brand.",
-    url: "https://haarsheonline.net/",
-    tags: ["E-Commerce", "Fashion", "Responsive"],
-    image: "./p2.PNG"
-  },
-  {
-    title: "Solar Express",
-    description: "Marketplace platform for solar products, focusing on speed and clarity.",
-    url: "https://solarexpress.vercel.app/",
-    tags: ["Marketplace", "Green Tech", "Tailwind"],
-    image: "./p1.PNG"
-  },
+
+
 ];
 
 export default function ProjectsPage() {
